@@ -16,13 +16,13 @@ ArchCopilot is a small portfolio project that converts natural-language product 
 
 ## Project Structure
 
-- `/Users/akilavallisriraman/codexprojects/architechtautopilot/backend` - FastAPI API
-- `/Users/akilavallisriraman/codexprojects/architechtautopilot/frontend` - Next.js UI
+- `backend/` - FastAPI API
+- `frontend/` - Next.js UI
 
 ## Backend Setup
 
 ```bash
-cd /Users/akilavallisriraman/codexprojects/architechtautopilot/backend
+cd backend
 python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -44,7 +44,7 @@ uvicorn app.main:app --reload --port 8000
 ## Frontend Setup
 
 ```bash
-cd /Users/akilavallisriraman/codexprojects/architechtautopilot/frontend
+cd frontend
 npm install
 ```
 
@@ -89,5 +89,5 @@ SQLite tables:
 
 Five example specs are provided in:
 
-- `/Users/akilavallisriraman/codexprojects/architechtautopilot/backend/app/example_specs.py`
-- `/Users/akilavallisriraman/codexprojects/architechtautopilot/frontend/lib/examples.ts`
+- `backend/app/example_specs.py`
+- `frontend/lib/examples.ts`
