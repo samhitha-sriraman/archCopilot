@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 8%, #ddd6fe 0%, transparent 42%),
+    radial-gradient(circle at 88% 18%, #c4b5fd 0%, transparent 36%),
+    linear-gradient(180deg, #f8f5ff 0%, #f3efff 100%);
+  color: #1f1b2e;
+}
+
+a:hover,
+button:hover,
+[role="button"]:hover,
+input[type="file"] + label:hover {
+  cursor: pointer;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes text-shimmer {
+  0% {
+    background-position: 200% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.92;
+  }
+}
+
+@layer utilities {
+  .icon-btn {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded border border-ink/30 bg-white transition hover:bg-violet-50;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded bg-violet-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-violet-700 disabled:opacity-40;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded border border-violet-300 bg-white px-4 py-2 text-sm font-medium text-violet-700 transition hover:bg-violet-50 disabled:opacity-40;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded border border-ink/25 bg-white px-3 py-1.5 text-sm transition hover:bg-violet-50 disabled:opacity-40;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 700ms ease-out both;
+  }
+
+  .animate-fade-up-delay-1 {
+    animation: fade-up 700ms ease-out 120ms both;
+  }
+
+  .animate-fade-up-delay-2 {
+    animation: fade-up 700ms ease-out 240ms both;
+  }
+
+  .animate-fade-up-delay-3 {
+    animation: fade-up 700ms ease-out 360ms both;
+  }
+
+  .text-shimmer {
+    background: linear-gradient(90deg, #5b21b6 0%, #7c3aed 35%, #c084fc 55%, #7c3aed 75%, #5b21b6 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: text-shimmer 5s linear infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2.5s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
